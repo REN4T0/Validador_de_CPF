@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+h1, form {
+    margin-top: 2vw;
+    margin-left: 2vw;
+}
+
+fieldset{
+    width: fit-content;
+    padding: 0.5vw 1vw 1vw 1vw;
+    border-radius: 5px;
+}
+
+fieldset legend {
+    font-size: 1vw;
+}
+
+fieldset input {
+    width: 18vw;
+    font-size: 2vw;
+    border: none;
+    outline: none;
+}
+
+button {
+    padding: 0.5vw 1vw 0.5vw 1vw;
+    margin-top: 1vw;
+    font-size: 1vw;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 213, 0);
+    cursor: pointer;
+}
+
+div{
+    width: 20vw;
+    height: 10vw;
+    position: absolute;
+    top: 2vw;
+    right: -22vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 1px 5px 7px #00000090;
+    transition: right 0.5s ease;
+}
+
+input::-webkit-inner-spin-button{
+    display: none;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+button:active{
+    opacity: 0.6;
+}

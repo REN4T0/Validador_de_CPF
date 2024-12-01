@@ -1,15 +1,15 @@
-function Get(digits, verifiers) {
+export function Get(digits, verifiers) {
     Object.defineProperties(this, {
         digits: {
             value: digits,
-            enumerable: true,
+            enumerable: false,
             writable: true,
             configurable: false
         },
 
         verifiers: {
             value: verifiers,
-            enumerable: true,
+            enumerable: false,
             writable: false,
             configurable: false
         },
@@ -27,8 +27,9 @@ Get.prototype.findVerifiers = function () {
 }
 
 Get.prototype.validate = function () {
-    if (this.digits.length !== 9 || this.verifiers.length !== 2) throw new Error("CPF inválido");
-
+    if (this.digits.length !== 9 || this.verifiers.length !== 2) throw new Error("Um CPF deve possuir 11 (onze) dígitos.");
+    if(this.digits.match(/[a-zA-Z\W]/g) || this.verifiers.match(/[a-zA-Z\W]/g)) throw new Error("Um CPF deve possuir apenas números.");
+        
     this.findVerifiers();
 
     if (this.verifiers === this.digits.slice(-2, this.digits.length + 1)) {
@@ -40,12 +41,4 @@ Get.prototype.validate = function () {
     } else {
         throw new Error("CPF inválido");
     }
-}
-
-const CPF = new Get('123456789', '09');
-
-try {
-    console.log(CPF.validate());
-} catch (err) {
-    console.log(err);
 }
