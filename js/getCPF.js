@@ -1,4 +1,4 @@
-import { ValidateCPF } from "./validateCPF.js";
+import { ValidateCPF } from "./validateCPF.mjs";
 import { showAlert } from "./assets/alert.js";
 
 document.addEventListener('click', e => {

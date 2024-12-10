@@ -1,16 +1,16 @@
 export class ValidateCPF {
-    constructor(digits, verifiers){
+    constructor(digits, verifiers) {
         Object.defineProperties(this, {
             digits: {
                 value: digits,
-                enumerable: false,
+                enumerable: true,
                 writable: true,
                 configurable: false
             },
-    
+
             verifiers: {
                 value: verifiers,
-                enumerable: false,
+                enumerable: true,
                 writable: false,
                 configurable: false
             },
@@ -29,8 +29,9 @@ export class ValidateCPF {
 
     validate() {
         if (this.digits.length !== 9 || this.verifiers.length !== 2) throw new Error("Um CPF deve possuir 11 (onze) dígitos.");
-        if(this.digits.match(/[a-zA-Z\W]/g) || this.verifiers.match(/[a-zA-Z\W]/g)) throw new Error("Um CPF deve possuir apenas números.");
-            
+        if (this.digits.match(/[a-zA-Z\W]/g) || this.verifiers.match(/[a-zA-Z\W]/g)) throw new Error("Um CPF deve possuir apenas números.");
+        if (this.digits[0].repeat(this.digits.length) === this.digits) throw new Error("Números sequenciais detectados - CPF inválido.");
+
         this.findVerifiers();
 
         if (this.verifiers === this.digits.slice(-2, this.digits.length + 1)) {
