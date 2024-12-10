@@ -18,7 +18,6 @@ class GenerateCPF extends ValidateCPF {
 
         return nineDigits;
     }
-
 }
 
 export function getGeneratedCPF() {
