@@ -1,4 +1,4 @@
-import { Get } from "./validateCPF.js";
+import { ValidateCPF } from "./validateCPF.js";
 import { showAlert } from "./assets/alert.js";
 
 document.addEventListener('click', e => {
@@ -12,7 +12,7 @@ document.addEventListener('click', e => {
         const NINE_DIGITS = UNVALIDATED_CPF.slice(0,-2);
         const TWO_VERIFIERS = UNVALIDATED_CPF.slice(-2, UNVALIDATED_CPF.length);
         
-        const CPF = new Get(NINE_DIGITS, TWO_VERIFIERS);
+        const CPF = new ValidateCPF(NINE_DIGITS, TWO_VERIFIERS);
 
         try {
             const RESULT = CPF.validate();
