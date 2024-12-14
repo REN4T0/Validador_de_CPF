@@ -4,13 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="./js/assets/sidebar.js" defer></script>
     <script type="module" src="./js/getCPF.js" defer></script>
     <title>Validador de CPF</title>
 </head>
 <body>
-    <h1>Validador de CPF</h1>
+    <header>
+        <button class="close">X</button>
+        <nav>
+            <a href="#" style="background-color: rgb(253, 214, 42); border: none;" onclick="closeSideBar()">Validador de CPF</a>
+            <a href="#" class="generator">Gerador de CPF</a>
+        </nav>
+    </header>
 
+    <button class="open">|||</button>
+    
     <form action="#" method="POST">
+        <h1>Validador de CPF</h1>
+
         <fieldset>
             <legend for="cpf">CPF</legend>
             <input type="text" name="cpf" id="cpf">
@@ -22,5 +33,7 @@
     <div>
         <p>Message</p>
     </div>
+
+    <canvas class="back"></canvas>
 </body>
 </html>

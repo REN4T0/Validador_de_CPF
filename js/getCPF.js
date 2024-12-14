@@ -1,4 +1,5 @@
 import { ValidateCPF } from "./validateCPF.mjs";
+import { getGeneratedCPF } from "./generateCPF.mjs";
 import { showAlert } from "./assets/alert.js";
 
 document.addEventListener('click', e => {
@@ -21,4 +22,16 @@ document.addEventListener('click', e => {
             showAlert(er.message);
         }
     }
+
+    if(el.classList.contains("generate")){
+        try {
+            const NEW_CPF = getGeneratedCPF();
+            document.querySelector("#new-cpf").value = NEW_CPF;
+        } catch (er) {
+            showAlert("Infelizmente, ocorreu um erro. Pedimos desculpas pelo incoveniente");
+        }
+    }
+
+    if(el.classList.contains("generator")) window.location = "./pages/CPFgenerator.html";
+    if(el.classList.contains("validator")) window.location = "../index.html";
 })

@@ -29,6 +29,3 @@ export function getGeneratedCPF() {
     const { digits: GENERATED_CPF } = CPF_OBJECT;
     return GENERATED_CPF;
 }
-
-const CPF = getGeneratedCPF();
-console.log(CPF);

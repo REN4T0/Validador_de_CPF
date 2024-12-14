@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de CPF</title>
+    <script src="../js/assets/sidebar.js" defer></script>
+    <script type="module" src="../js/getCPF.js" defer></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <button class="close">X</button>
+        <nav>
+            <a href="#" class="validator">Validador de CPF</a>
+            <a href="#" style="background-color: rgb(253, 214, 42); border: none;" onclick="closeSideBar()">Gerador de CPF</a>
+        </nav>
+    </header>
+
+    <button class="open">|||</button>
+
+    <main>
+        <h1>Gerador de CPF</h1>
+        <label for="new-cpf">Clique no botão para um CPF válido ser gerado</label>
+        <input type="text" name="new-cpf" id="new-cpf" readonly>
+        <button class="generate">Gerar CPF</button>
+    </main>
+
+    <div>
+        <p>Message</p>
+    </div>
+
+    <canvas class="back"></canvas>
+</body>
+</html>
